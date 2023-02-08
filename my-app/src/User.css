@@ -1,0 +1,16 @@
+.userMainImage {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    /*margin: 0 auto;*/
+    /*position: center;*/
+    clip-path: circle();
+
+    /*float: left;*/
+}
+
+.userContainer {
+    width: 100%;
+    max-width: 800px;
+    margin:0 auto;
+}

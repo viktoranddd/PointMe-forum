@@ -1,0 +1,24 @@
+.postContainer {
+    width: 100%;
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+.postMainImage {
+    margin: 10px;
+    width: 40%;
+    /*height: 40%;*/
+    max-width: 400px;
+    /*max-height: 400px;*/
+    float: left;
+}
+
+.commentsContainer {
+    margin-left: 8%;
+}
+
+.textarea {
+    margin: 0 auto;
+    width: 98%;
+    height: 100%;
+}
