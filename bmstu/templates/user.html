@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}PointMe{% endblock %}
+
+{% block content %}
+    <div>Имя пользователя: {{ data.user.username }}</div>
+    <div>Описание: {{ data.user.descript }}</div>
+    <div>Дата регистрации: {{ data.user.reg_datetime.date }}</div>
+
+<ul>
+    {% for post in data.posts %}
+        <br>
+        <div>Название: {{ post.title }}</div>
+        {% include 'post_element.html' with element=post %}
+        <br>
+
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!doctype html>
+{% load static %}
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'examp.css' %}">
+</head>
+<body>
+    <a href="http://127.0.0.1:8000/">
+    <img src="http://127.0.0.1:8000/static/PointMeLogo.png" alt="Логотип" height="100px" width="100px" >
+    <br>
+    <b>PointMe Application</b>
+    </a>
+    {% block content %}{% endblock %}
+    <a href="{% url 'hello' %}">Информация о разработчике</a>
+</body>
+</html>

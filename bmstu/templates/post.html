@@ -1,0 +1,38 @@
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block title %}Пост №{{ data.post.id }}{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <div>Название: {{ data.post.name }}</div>#}
+{#        <div>Описание: {{ data.post.description }}</div>#}
+{#{% endblock %}#}
+
+{% extends 'base.html' %}
+
+{% block title %}Пост №{{ data.post.id }}{% endblock %}
+
+{% block content %}
+    <div class="post__description">
+        <div>Название: {{ data.post.title }}</div>
+        <div>Описание: {{ data.post.descript }}</div>
+        <div>Количество лайков: {{ data.likes }}</div>
+        <a href="{% url 'user_url' data.post.author.id %}">Автор: {{ data.post.author.username }}</a>
+        <div>Опубликован: {{ data.post.post_datetime }}</div>
+    </div>
+
+    <ul>
+    {% for comment in data.comments %}
+        <br>
+        <div>id: {{ comment.id }}</div>
+        {% if comment.ref_id != None %} <div>Ответ на: {{ comment.ref_id }}</div> {% endif %}
+        <a href="{% url 'user_url' comment.author.id %}">Автор: {{ comment.author.username }}</a> <br>
+        <div>Комментарий: {{ comment.comm }}</div>
+        <div>Комментарий добавлен: {{ comment.comm_datetime }}</div>
+        <br>
+
+    {% empty %}
+        <li>Комментариев нет</li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

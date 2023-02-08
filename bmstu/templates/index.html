@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+    <title>О разработчике</title>
+</head>
+<body>
+    Приветствую вас!<br>
+    Разработчик - студент группы РТ5-51Б Андреев Виктор
+<ul>
+    {% for var in data.list %}
+        {% if var == 'python' %}
+            <li>Мне нравится {{ var }}</li>
+        {% elif var == 'django' %}
+            <li>Мне нравится {{ var }} очень!</li>
+        {% else %}
+            <li>Мне не нравится {{ var }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+</body>
+</html>

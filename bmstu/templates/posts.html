@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}PointMe{% endblock %}
+
+{% block content %}
+<ul>
+    {% for post in data.posts %}
+        <br>
+        <div>Название: {{ post.title }}</div>
+        <a href="{% url 'user_url' post.author.id %}">Автор: {{ post.author.username }}</a> <br>
+        {% include 'post_element.html' with element=post %}
+        <div>Опубликован: {{ post.post_datetime }}</div>
+        <br>
+
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
